@@ -2,7 +2,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #f97316;
+  --color-slate-900: #151e32;
+  --color-slate-950: #0b1121;
+  --color-orange-500: #f97316;
 }
 
 body {

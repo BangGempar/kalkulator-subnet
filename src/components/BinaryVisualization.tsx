@@ -23,8 +23,7 @@ export function BinaryVisualization({ ipBinary, maskBinary, prefix }: Props) {
     <div className="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 shadow-sm text-slate-300">
       <div className="bg-slate-950 px-4 py-3 border-b border-slate-800">
         <h3 className="font-mono text-sm font-semibold text-slate-300 tracking-wider">
-          <span className="text-orange-500 mr-2">{"//"}</span>
-          BINARY
+          <span className="text-orange-500 mr-2">06 //</span> BINARY
         </h3>
       </div>
       <div className="p-4 overflow-x-auto">

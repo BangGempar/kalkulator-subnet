@@ -12,7 +12,7 @@ function App() {
     result, error, calculate, reset
   } = useSubnetCalculator();
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -155,8 +155,7 @@ function App() {
 
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-6 shadow-sm">
             <h3 className="font-mono text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4 tracking-wider">
-              <span className="text-orange-500 mr-2">{"//"}</span>
-              EXAMPLES
+              <span className="text-orange-500 mr-2">01 //</span> EXAMPLES
             </h3>
             <div className="flex flex-wrap gap-2">
               {[
@@ -186,7 +185,7 @@ function App() {
           ) : (
             <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
               <ResultCard
-                title="NETWORK INFORMATION"
+                title="02 // NETWORK INFORMATION"
                 rows={[
                   { label: 'IP Address', value: result.ipAddress, copyable: true },
                   { label: 'CIDR', value: `/${result.cidr}`, copyable: true },
@@ -196,7 +195,7 @@ function App() {
               />
 
               <ResultCard
-                title="ADDRESS RANGE"
+                title="03 // ADDRESS RANGE"
                 rows={[
                   { label: 'Network Address', value: result.networkAddress, copyable: true },
                   { label: 'First Host', value: result.firstHost, copyable: true },
@@ -207,7 +206,7 @@ function App() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <ResultCard
-                  title="CAPACITY"
+                  title="04 // CAPACITY"
                   rows={[
                     { label: 'Total Addresses', value: formatNumber(result.totalAddresses) },
                     { label: 'Usable Hosts', value: formatNumber(result.usableHosts) },
@@ -216,7 +215,7 @@ function App() {
                 />
                 
                 <ResultCard
-                  title="CLASSIFICATION"
+                  title="05 // CLASSIFICATION"
                   rows={[
                     { label: 'Legacy Class', value: result.addressClass },
                     { label: 'Address Type', value: result.addressType },
