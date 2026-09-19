@@ -12,7 +12,7 @@ function App() {
     result, error, calculate, reset
   } = useSubnetCalculator();
 
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -41,7 +41,7 @@ function App() {
       <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-10">
         <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-mono font-bold">
+            <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-mono font-bold">
               IP
             </div>
             <h1 className="text-xl font-semibold text-slate-900 dark:text-white">
@@ -50,7 +50,7 @@ function App() {
           </div>
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 text-slate-500 hover:text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-800 rounded transition-colors"
+            className="p-2 text-slate-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-slate-800 rounded transition-colors"
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
@@ -64,7 +64,7 @@ function App() {
               <button
                 className={`flex-1 pb-2 text-sm font-medium border-b-2 transition-colors ${
                   mode === 'cidr' 
-                    ? 'border-orange-500 text-orange-500' 
+                    ? 'border-blue-500 text-blue-500' 
                     : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
                 }`}
                 onClick={() => setMode('cidr')}
@@ -74,7 +74,7 @@ function App() {
               <button
                 className={`flex-1 pb-2 text-sm font-medium border-b-2 transition-colors ${
                   mode === 'mask' 
-                    ? 'border-orange-500 text-orange-500' 
+                    ? 'border-blue-500 text-blue-500' 
                     : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
                 }`}
                 onClick={() => setMode('mask')}
@@ -92,7 +92,7 @@ function App() {
                   type="text"
                   value={ip}
                   onChange={(e) => setIp(e.target.value)}
-                  className="w-full px-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 font-mono text-sm"
+                  className="w-full px-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
                   placeholder="192.168.1.10"
                 />
               </div>
@@ -108,7 +108,7 @@ function App() {
                       type="text"
                       value={cidr}
                       onChange={(e) => setCidr(e.target.value)}
-                      className="w-full pl-7 pr-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 font-mono text-sm"
+                      className="w-full pl-7 pr-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
                       placeholder="24"
                     />
                   </div>
@@ -122,7 +122,7 @@ function App() {
                     type="text"
                     value={mask}
                     onChange={(e) => setMask(e.target.value)}
-                    className="w-full px-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 font-mono text-sm"
+                    className="w-full px-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
                     placeholder="255.255.255.0"
                   />
                 </div>
@@ -138,7 +138,7 @@ function App() {
               <div className="flex gap-3 pt-2">
                 <button
                   type="submit"
-                  className="flex-1 bg-slate-900 hover:bg-slate-800 dark:bg-orange-500 dark:hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                  className="flex-1 bg-slate-900 hover:bg-slate-800 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors"
                 >
                   Calculate
                 </button>
@@ -155,7 +155,7 @@ function App() {
 
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-6 shadow-sm">
             <h3 className="font-mono text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4 tracking-wider">
-              <span className="text-orange-500 mr-2">01 //</span> EXAMPLES
+              <span className="text-blue-500 mr-2">01 //</span> EXAMPLES
             </h3>
             <div className="flex flex-wrap gap-2">
               {[
@@ -168,7 +168,7 @@ function App() {
                 <button
                   key={i}
                   onClick={() => loadExample(ex.ip, ex.cidr)}
-                  className="px-2.5 py-1 text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700 rounded transition-colors"
+                  className="px-2.5 py-1 text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-slate-700 rounded transition-colors"
                 >
                   {ex.ip}/{ex.cidr}
                 </button>
@@ -224,7 +224,7 @@ function App() {
               </div>
 
               {result.cidr === 31 && (
-                <div className="p-4 bg-orange-50 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200 text-sm rounded-lg border border-orange-200 dark:border-orange-800/30">
+                <div className="p-4 bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 text-sm rounded-lg border border-blue-200 dark:border-blue-800/30">
                   <strong>Note:</strong> /31 is commonly used for point-to-point links. Both addresses are considered usable hosts.
                 </div>
               )}

@@ -19,7 +19,7 @@ export function ResultCard({ title, rows }: Props) {
       <div className="bg-slate-50 dark:bg-slate-950 px-4 py-3 border-b border-slate-200 dark:border-slate-800">
         <h3 className="font-mono text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wider">
           {title.includes("//") ? (
-            <><span className="text-orange-500 mr-2">{title.split("//")[0]}//</span>{title.split("//")[1]}</>
+            <><span className="text-blue-500 mr-2">{title.split("//")[0]}//</span>{title.split("//")[1]}</>
           ) : title}
         </h3>
       </div>
