@@ -21,7 +21,7 @@ export function BinaryVisualization({ ipBinary, maskBinary, prefix }: Props) {
     <div className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden border-2 border-slate-300 dark:border-slate-800 shadow-sm text-slate-900 dark:text-slate-300">
       <div className="bg-slate-100 dark:bg-slate-950 px-4 py-3 border-b-2 border-slate-300 dark:border-slate-800">
         <h3 className="font-mono text-sm font-bold text-slate-900 dark:text-slate-300 tracking-wider">
-          <span className="text-blue-600 dark:text-blue-500 mr-2">06 //</span> BINARY
+          <span className="text-blue-600 dark:text-blue-500 mr-2"></span> BINER
         </h3>
       </div>
       <div className="p-4 overflow-x-auto">

@@ -45,7 +45,7 @@ function App() {
               IP
             </div>
             <h1 className="text-xl font-semibold text-slate-900 dark:text-white">
-              IPv4 Subnet Calculator
+              IPv4 Subnet Kalkulator  
             </h1>
           </div>
           <button
@@ -140,7 +140,7 @@ function App() {
                   type="submit"
                   className="flex-1 bg-slate-900 hover:bg-slate-800 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors"
                 >
-                  Calculate
+                  menghitung
                 </button>
                 <button
                   type="button"
@@ -155,7 +155,7 @@ function App() {
 
           <div className="bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-800 rounded-lg p-6 shadow-sm">
             <h3 className="font-mono text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4 tracking-wider">
-              <span className="text-blue-500 mr-2">01 //</span> EXAMPLES
+              <span className="text-blue-500 mr-2"></span> CONTOH
             </h3>
             <div className="flex flex-wrap gap-2">
               {[
@@ -180,12 +180,12 @@ function App() {
         <div className="lg:col-span-8 space-y-6">
           {!result ? (
             <div className="h-full min-h-[400px] flex items-center justify-center border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-lg text-slate-400 dark:text-slate-500">
-              <p>Enter an IP address and CIDR prefix to see results.</p>
+              <p>Silahkan Masukan IP Address dan CIDR Prefix untuk melihat hasilnya.</p>
             </div>
           ) : (
             <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
               <ResultCard
-                title="02 // NETWORK INFORMATION"
+                title="INFORMASI NETWORK"
                 rows={[
                   { label: 'IP Address', value: result.ipAddress, copyable: true },
                   { label: 'CIDR', value: `/${result.cidr}`, copyable: true },
@@ -195,7 +195,7 @@ function App() {
               />
 
               <ResultCard
-                title="03 // ADDRESS RANGE"
+                title="RENTANG ADDRESS"
                 rows={[
                   { label: 'Network Address', value: result.networkAddress, copyable: true },
                   { label: 'First Host', value: result.firstHost, copyable: true },
@@ -206,7 +206,7 @@ function App() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <ResultCard
-                  title="04 // CAPACITY"
+                  title="KAPASITAS"
                   rows={[
                     { label: 'Total Addresses', value: formatNumber(result.totalAddresses) },
                     { label: 'Usable Hosts', value: formatNumber(result.usableHosts) },
@@ -215,7 +215,7 @@ function App() {
                 />
                 
                 <ResultCard
-                  title="05 // CLASSIFICATION"
+                  title="KLASIFIKASI"
                   rows={[
                     { label: 'Legacy Class', value: result.addressClass },
                     { label: 'Address Type', value: result.addressType },
