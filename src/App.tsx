@@ -59,13 +59,13 @@ function App() {
 
       <main className="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-4 space-y-6">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-6 shadow-sm">
+          <div className="bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-800 rounded-lg p-6 shadow-sm">
             <div className="flex gap-4 mb-6">
               <button
                 className={`flex-1 pb-2 text-sm font-medium border-b-2 transition-colors ${
                   mode === 'cidr' 
                     ? 'border-blue-500 text-blue-500' 
-                    : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
+                    : 'border-transparent text-slate-600 hover:text-black font-semibold dark:hover:text-slate-300'
                 }`}
                 onClick={() => setMode('cidr')}
               >
@@ -75,7 +75,7 @@ function App() {
                 className={`flex-1 pb-2 text-sm font-medium border-b-2 transition-colors ${
                   mode === 'mask' 
                     ? 'border-blue-500 text-blue-500' 
-                    : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
+                    : 'border-transparent text-slate-600 hover:text-black font-semibold dark:hover:text-slate-300'
                 }`}
                 onClick={() => setMode('mask')}
               >
@@ -85,21 +85,21 @@ function App() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-sm font-medium text-slate-900 font-bold dark:text-slate-300 mb-1">
                   IP Address
                 </label>
                 <input
                   type="text"
                   value={ip}
                   onChange={(e) => setIp(e.target.value)}
-                  className="w-full px-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+                  className="w-full px-3 py-2 bg-white dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 text-black dark:text-slate-100 font-semibold focus:ring-blue-500 font-mono text-sm"
                   placeholder="192.168.1.10"
                 />
               </div>
 
               {mode === 'cidr' ? (
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-sm font-medium text-slate-900 font-bold dark:text-slate-300 mb-1">
                     CIDR Prefix
                   </label>
                   <div className="relative">
@@ -108,21 +108,21 @@ function App() {
                       type="text"
                       value={cidr}
                       onChange={(e) => setCidr(e.target.value)}
-                      className="w-full pl-7 pr-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+                      className="w-full pl-7 pr-3 py-2 bg-white dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 text-black dark:text-slate-100 font-semibold focus:ring-blue-500 font-mono text-sm"
                       placeholder="24"
                     />
                   </div>
                 </div>
               ) : (
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-sm font-medium text-slate-900 font-bold dark:text-slate-300 mb-1">
                     Subnet Mask
                   </label>
                   <input
                     type="text"
                     value={mask}
                     onChange={(e) => setMask(e.target.value)}
-                    className="w-full px-3 py-2 bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+                    className="w-full px-3 py-2 bg-white dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 text-black dark:text-slate-100 font-semibold focus:ring-blue-500 font-mono text-sm"
                     placeholder="255.255.255.0"
                   />
                 </div>
@@ -153,7 +153,7 @@ function App() {
             </form>
           </div>
 
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-6 shadow-sm">
+          <div className="bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-800 rounded-lg p-6 shadow-sm">
             <h3 className="font-mono text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4 tracking-wider">
               <span className="text-blue-500 mr-2">01 //</span> EXAMPLES
             </h3>

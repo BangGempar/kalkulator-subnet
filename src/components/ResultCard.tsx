@@ -1,5 +1,4 @@
 
-
 import { CopyButton } from './CopyButton';
 
 interface Row {
@@ -15,20 +14,20 @@ interface Props {
 
 export function ResultCard({ title, rows }: Props) {
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden shadow-sm">
-      <div className="bg-slate-50 dark:bg-slate-950 px-4 py-3 border-b border-slate-200 dark:border-slate-800">
-        <h3 className="font-mono text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wider">
+    <div className="bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-800 rounded-lg overflow-hidden shadow-sm">
+      <div className="bg-slate-100 dark:bg-slate-950 px-4 py-3 border-b-2 border-slate-300 dark:border-slate-800">
+        <h3 className="font-mono text-sm font-bold text-slate-900 dark:text-slate-300 tracking-wider">
           {title.includes("//") ? (
-            <><span className="text-blue-500 mr-2">{title.split("//")[0]}//</span>{title.split("//")[1]}</>
+            <><span className="text-blue-600 dark:text-blue-500 mr-2">{title.split("//")[0]}//</span>{title.split("//")[1]}</>
           ) : title}
         </h3>
       </div>
-      <div className="divide-y divide-slate-100 dark:divide-slate-800">
+      <div className="divide-y-2 divide-slate-200 dark:divide-slate-800">
         {rows.map((row, i) => (
           <div key={i} className="px-4 py-3 flex justify-between items-center hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-            <span className="text-sm text-slate-600 dark:text-slate-400">{row.label}</span>
+            <span className="text-sm font-semibold text-slate-800 dark:text-slate-400">{row.label}</span>
             <div className="flex items-center gap-3">
-              <span className="text-sm font-mono text-slate-900 dark:text-slate-100 font-medium">
+              <span className="text-sm font-mono text-black dark:text-slate-100 font-bold">
                 {row.value ?? '-'}
               </span>
               {row.copyable && row.value && (
